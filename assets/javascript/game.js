@@ -19,7 +19,8 @@
         var letters = answer.split('');
         var attemptsLeft = 10;
         var output="";
-        var userLetter="";
+        console.log('answer ', answer);
+        console.log('userLetter', userLetter);
 
     var setup = function()
     {
@@ -29,13 +30,13 @@
             output = output + display[i];
         }
         document.getElementById("game").innerHTML = output;
-        output = "";
+        console.log('output ', output)
     }
 
     var submit = function()
     {
         output = "";
-        userLetter=$("letter").value;
+        $("letter").value(userLetter);
         $("letter").value = "";
 
 
@@ -71,7 +72,15 @@
     window.onload = function()
     {
         setup();
-        $("submit").onclick = submit;
+        // $("submit").onclick = submit;
+
+        document.onkeyup = function() {
+            const userGuess = event.key.toUpperCase();
+            
+            console.log('userLetter', userLetter)
+            // userLetter.push(event.key);
+        
+        }
     }
   
  //     If the user chooses the corrct letters, the software displays an image and plays a song -->
