@@ -12,15 +12,27 @@
 // 4. get the number of letters are in the chosen word
         var game = ["APOLLO100", "BEETHOVEN", "MOZART", "KLF"]
         var choice = Math.floor(Math.random()*4);
-        var answer = game[choice];
+        var answer = "";
         var myLength = answer.length;
         var display = [myLength];
         var win = myLength;
-        var letters = answer.split('');
+        var letters = [];
         var attemptsLeft = 10;
         var output="";
+        var userLetter="";
         console.log('answer ', answer);
-        console.log('userLetter', userLetter);
+// hello sean this is dave
+
+    
+    function assignAnswer() {
+        answer = game[choice] 
+        letters = answer.split('');
+        console.log("This is the assigned Answer: " + answer)
+        console.log("this should be an array with all the letters in answer: "+ letters)
+
+    }
+
+    assignAnswer()
 
     var setup = function()
     {
@@ -32,6 +44,21 @@
         document.getElementById("game").innerHTML = output;
         console.log('output ', output)
     }
+
+    // function checkGuess() {
+        
+    //     // this loop we want to run over whatever the answer word is
+    //     for (var i = 0; i < answer.length; i++) {
+           
+    //         // for the if/else statement, IF userLetter is in "answer" we want to replace the __ on the screen 
+    //         if (userLetter = answer){
+    //             //parens is condition, brackets are what we do
+    //         }
+    //         // ELSE -- guesses and nothing else
+
+
+    //     }
+    // }
 
     var submit = function()
     {
@@ -77,7 +104,7 @@
         document.onkeyup = function() {
             const userGuess = event.key.toUpperCase();
             
-            console.log('userLetter', userLetter)
+            console.log('userGuess', userGuess)
             // userLetter.push(event.key);
         
         }
