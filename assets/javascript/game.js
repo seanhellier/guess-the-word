@@ -20,7 +20,6 @@
         var attemptsLeft = 10;
         var userLetter="";
         console.log('answer ', answer);
-// hello sean this is dave
 
     
     function assignAnswer() {
@@ -82,6 +81,13 @@
                 }
                     output = output + display[c] + " ";
         }
+
+
+        // if userLetter != letter, decrement attemptsLeft by 1 and display id="attemptsLeft">
+        // combine userLetters into string and compare against
+
+
+
 
         // document.getElementById("game").innerHTML = output;
         // output="";
