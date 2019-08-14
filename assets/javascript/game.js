@@ -18,7 +18,6 @@
         var win = myLength;
         var letters = [];
         var attemptsLeft = 10;
-        var output="";
         var userLetter="";
         console.log('answer ', answer);
 // hello sean this is dave
@@ -26,39 +25,53 @@
     
     function assignAnswer() {
         answer = game[choice] 
-        letters = answer.split('');
+        // letters = answer.split('');
         console.log("This is the assigned Answer: " + answer)
-        console.log("this should be an array with all the letters in answer: "+ letters)
+        // console.log("this should be an array with all the letters in answer: "+ letters)
 
     }
 
     assignAnswer()
 
-    var setup = function()
-    {
-        for (var i=0; i< answer.length; i++)
-        {
-            display[i] = "_ ";
-            output = output + display[i];
-        }
-        document.getElementById("game").innerHTML = output;
-        console.log('output ', output)
+    for (let i = 0; i < answer.length; i++) {
+        letters.push("_");
+        console.log()
     }
 
-    // function checkGuess() {
+    var setup = function()
+    {
+        var output="";
+        // console.log('working with ', answer);
+        // console.log('letters ', letters);
+        for (var i=0; i< answer.length; i++)
+        {
+            output = output + letters[i] + " ";
+        }
+        document.getElementById("game").innerHTML = output;
+        // console.log('output ', output)
+    }
+
+    function checkGuess(userLetter) {
         
-    //     // this loop we want to run over whatever the answer word is
-    //     for (var i = 0; i < answer.length; i++) {
+        // this loop I want to run over whatever the answer word is
+        for (var i = 0; i < answer.length; i++) {
            
-    //         // for the if/else statement, IF userLetter is in "answer" we want to replace the __ on the screen 
-    //         if (userLetter = answer){
-    //             //parens is condition, brackets are what we do
-    //         }
-    //         // ELSE -- guesses and nothing else
+            // for the if/else statement, IF userLetter is in "answer" we want to replace the __ on the screen 
+            if (userLetter === answer[i]){
+                letters[i] = userLetter;
+                
+
+                //parens is condition, brackets are what we do
+                // replace the underscore on the screen, with userLetter
+                // document.getElementById("game")
+            }
+            // ELSE -- guesses and nothing else
 
 
-    //     }
-    // }
+        }
+        console.log('answer is ', letters);
+        setup();
+    }
 
     var submit = function()
     {
@@ -103,7 +116,7 @@
 
         document.onkeyup = function() {
             const userGuess = event.key.toUpperCase();
-            
+            checkGuess(userGuess);
             console.log('userGuess', userGuess)
             // userLetter.push(event.key);
         
