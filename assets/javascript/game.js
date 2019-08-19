@@ -13,13 +13,14 @@
         var game = ["APOLLO100", "BEETHOVEN", "MOZART", "KLF"]
         var choice = Math.floor(Math.random()*4);
         var answer = "";
-        var myLength = answer.length;
-        var display = [myLength];
-        var win = myLength;
+        // var myLength = answer.length;
+        // var display = [myLength];
+        // var win = myLength;
         var letters = [];
         var attemptsLeft = 10;
         var userLetter="";
-        console.log('answer ', answer);
+        var wrongGuess="";
+        // console.log('answer ', answer);
 
     
     function assignAnswer() {
@@ -32,6 +33,7 @@
 
     assignAnswer()
 
+    // function that puts blanks on page
     for (let i = 0; i < answer.length; i++) {
         letters.push("_");
         console.log()
@@ -64,6 +66,26 @@
         setup();
     }
 
+    // updateGuesses: function(letter) {
+    //     // If the letter is not in the guessedLetters array, and the letter is not in the lettersOfTheWord array..
+    //     if ((this.guessedLetters.indexOf(letter) === -1) && (this.lettersOfTheWord.indexOf(letter) === -1)) {
+    
+    //       // Add the letter to the guessedLetters array.
+    //       this.guessedLetters.push(letter);
+    
+    //       // Decrease guesses by one.
+    //       this.guessesLeft--;
+    
+    //       // Update guesses remaining and guesses letters on the page.
+    //       document.querySelector("#guesses-remaining").innerHTML = this.guessesLeft;
+    //       document.querySelector("#guessed-letters").innerHTML =
+    //       this.guessedLetters.join(", ");
+    //     }
+
+
+
+
+
     var submit = function()
     {
         output = "";
@@ -83,12 +105,46 @@
         }
 
 
-        // if userLetter != letter, decrement attemptsLeft by 1 and display id="attemptsLeft">
-        // combine userLetters into string and compare against
+        // When user chooses letter, check to see if it's in the chosen word string (done).
+        // if yes, put it in appropriate place (done)
+        // if not found, put in not found string and display in appropriate place / decrement number of guesses remaining
+        
+        // if number of correctly guessed letters matches all of chosen word String,
+
+        // declare win / play song
+
+        // else, continue the game until either guessed letter string matches chosen string or number of guesses remaining reaches zero.
+
+// This function is run whenever the user guesses a letter..
+gameProcess = function() {
+    // If the user has no guesses left, restart the game.
+    if (this.attemptsLeft === 0) {
+      this.restartGame();
+    }
+    // Otherwise...
+    else {
+      // Check for and handle incorrect guesses.
+      this.wrongGuess(userLetter);
+
+      // Check for and handle correct guesses.
+      this.updateMatchedLetters(userLetter);
+
+      // If the user wins, restart the game.
+      if (this.updateWins() === true) {
+        this.restartGame();
+      }
+    }
+
+  }
+
+  gameProcess();
 
 
 
 
+
+
+        // OLD CODE HERE
         // document.getElementById("game").innerHTML = output;
         // output="";
         // attemptsLeft--;
@@ -119,4 +175,4 @@
         }
     }
   
- //     If the user chooses the corrct letters, the software displays an image and plays a song -->
+
