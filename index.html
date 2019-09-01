@@ -17,43 +17,45 @@
 </head>
 <body>
 
+<div class="container">
+
+<div class="jumbotron">
+  <h1 class="heading">Word Guess Game</h1>
+</div>
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
-      <h4>Word Guess Game</h4>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium repudiandae sequi maiores ut modi. Earum aspernatur facilis sed fugit, fuga ut necessitatibus nobis nesciunt eveniet. Sit inventore magni consectetur?
-    </p>
-    </div>
-
-    <div class="col-sm-9">
-      <h4><small>Number of letters you must guess to win</small></h4>
-     
-        <p>
-                    <p id="game"></p>
-        </p>
-      <!-- <br><br> -->
-      <hr>
-      <h4><small>guess a letter</small></h4>
-        <p>
-          <!-- <form>  
-            Enter guess<input type="text" id="userLetter" name="userLetter"/><br/>  
-            <input type="button" value="userLetter" onclick="setup"/>  
-            </form>   -->
-        </p>
-      <br><br>
-      <hr>
-      <h4>Number of guesses left: <span id="attemptsLeft">10</span></h4>
-      <br><br>
-      <hr>
-      <h4>Number of wins: <span id="wins"></span></h4>
-      <hr>
-      <h4><small>Number of loses: <span id="losses"></span></small></h4>
-  </div>
+      <h4 class="heading">Word Guess Game</h4>
+  <p>
+    The game chooses the name of a famous musical artist or group and if you correctly guess the letters of their name, you win the game.
+  <!-- </p> -->
+    You will have ten chances per round.
+  </p>
+   <p>
+    Good luck!
+  <p>
 </div>
 
-<footer class="container-fluid">
-  <p>I am a footer</p>
+    <div class="col-sm-9">
+      <h4>Number of letters you must guess to win</h4>
+     
+        <p>
+            <p id="game"></p>
+
+        </p>
+      <hr>
+        <h4>Number of guesses left: <span id="attemptsLeft">10</span></h4>
+      <br><br>
+      <hr>
+        <h4>Number of wins: <span id="wins"></span></h4>
+      <hr>
+        <h4>Number of loses: <span id="losses"></span></h4>
+  </div>
+</div>
+</div>
+
+<footer class="footer">
+    <h4>&copy; Copyright 2019 Sean Leif Hellier</h4>
 </footer>
 
    <!-- local javascript -->
